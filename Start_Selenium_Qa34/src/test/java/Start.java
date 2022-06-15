@@ -28,24 +28,24 @@ public class Start {
         wd=new ChromeDriver();
         wd.navigate().to("https://contacts-app.tobbymarshall815.vercel.app/home");
 
-        // open form --> click login button
-        WebElement loginTab;
-        loginTab.click();
-
-        // fill valid email
-        WebElement emailTextBox;
-        emailTextBox.click();
-        emailTextBox.clear();
-        emailTextBox.sendKeys("test@gmail.com");
-        // fill valid password
-        WebElement passwordTextBox;
-        passwordTextBox.click();
-        passwordTextBox.clear();
-        passwordTextBox.sendKeys("Tt12345$");
-
-        // click login button
-        WebElement loginButton;
-        loginButton.click();
+//        // open form --> click login button
+//        WebElement loginTab;
+//        loginTab.click();
+//
+//        // fill valid email
+//        WebElement emailTextBox;
+//        emailTextBox.click();
+//        emailTextBox.clear();
+//        emailTextBox.sendKeys("test@gmail.com");
+//        // fill valid password
+//        WebElement passwordTextBox;
+//        passwordTextBox.click();
+//        passwordTextBox.clear();
+//        passwordTextBox.sendKeys("Tt12345$");
+//
+//        // click login button
+//        WebElement loginButton;
+//        loginButton.click();
 
         // Assert
     }
