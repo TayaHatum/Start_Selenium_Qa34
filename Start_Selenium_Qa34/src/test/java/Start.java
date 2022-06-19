@@ -1,3 +1,4 @@
+import com.sun.tools.javac.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -53,11 +54,30 @@ public class Start {
 
 
     @Test
-    public void firstTestRegistrationSuccess(){
+    public void firstTestRegistrationSuccess() throws InterruptedException {
         //fngkghfgjy
                 //hfgkdjhht
         //jhgkhrg
 
+        wd = new ChromeDriver();
+        wd.navigate().to("https://contacts-app.tobbymarshall815.vercel.app/home");
+        WebElement loginBtn = wd.findElement(By.cssSelector(".navbar-component_nav__1X_4m a[href='/login']"));
+        loginBtn.click();
+        WebElement loginTab = wd.findElement(By.cssSelector(".login_login__3EHKB input[placeholder='Email']"));
+        WebElement passwordTab = wd.findElement(By.cssSelector(".login_login__3EHKB input[placeholder='Password']"));
+        loginTab.sendKeys("abc");
+        passwordTab.sendKeys("efg");
+        Thread.sleep(3000);
+
+
+    }
+
+    public static void main(String[] args) {
+        List<String> names = List.of("John","Jack","Tony");
+
+        if(!names.contains("John")){
+
+        }
     }
 
 }
