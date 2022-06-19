@@ -61,8 +61,18 @@ public class StartCss {
 
         // end on "il"
         wd.findElement(By.cssSelector("[placeholder $='il']"));
+        wd.findElement(By.xpath("//*[contains(@placeholder,'ail')]")); // ---> il != ail
         // contains  --> "ai
         wd.findElement(By.cssSelector("[placeholder *='ai']"));
-        wd.findElement(By.xpath("//*[contains(@placeholder,'ai')]"));
+
+
+        WebElement element = wd.findElement(By.xpath("//*[contains(@placeholder,'ai')]"));
+        element.findElement(By.cssSelector("#root"));
+
+        List<WebElement> tdlist = wd.findElements(By.xpath("//table[@id]//td"));
+        for (WebElement el:
+             tdlist) {
+            el.getText();
+        }
     }
 }
