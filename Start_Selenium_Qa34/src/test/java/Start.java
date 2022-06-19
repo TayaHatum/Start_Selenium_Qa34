@@ -1,18 +1,20 @@
-import com.sun.tools.javac.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class Start {
 
     WebDriver wd;
 
     @Test
-    public void start(){
-        wd=new ChromeDriver();
-       // wd.get("https://contacts-app.tobbymarshall815.vercel.app/home"); // without history
+    public void start() {
+        wd = new ChromeDriver();
+        // wd.get("https://contacts-app.tobbymarshall815.vercel.app/home"); // without history
 
         wd.navigate().to("https://contacts-app.tobbymarshall815.vercel.app/home"); // with history
         wd.navigate().back();
@@ -26,12 +28,12 @@ public class Start {
 
 
     @Test
-    public void firstTestLoginSuccess(){
-        wd=new ChromeDriver();
+    public void firstTestLoginSuccess() {
+        wd = new ChromeDriver();
         wd.navigate().to("https://contacts-app.tobbymarshall815.vercel.app/home");
 
 //        // open form --> click login button
-        WebElement loginTab=wd.findElement(By.cssSelector("[href='/login']"));
+        WebElement loginTab = wd.findElement(By.cssSelector("[href='/login']"));
         loginTab.click();
 
         // fill valid email
@@ -54,30 +56,33 @@ public class Start {
 
 
     @Test
-    public void firstTestRegistrationSuccess() throws InterruptedException {
-        //fngkghfgjy
-                //hfgkdjhht
-        //jhgkhrg
-
+    public void firstTestRegistrationSuccess() {
         wd = new ChromeDriver();
-        wd.navigate().to("https://contacts-app.tobbymarshall815.vercel.app/home");
-        WebElement loginBtn = wd.findElement(By.cssSelector(".navbar-component_nav__1X_4m a[href='/login']"));
-        loginBtn.click();
-        WebElement loginTab = wd.findElement(By.cssSelector(".login_login__3EHKB input[placeholder='Email']"));
-        WebElement passwordTab = wd.findElement(By.cssSelector(".login_login__3EHKB input[placeholder='Password']"));
-        loginTab.sendKeys("abc");
-        passwordTab.sendKeys("efg");
-        Thread.sleep(3000);
+        wd.navigate().to("https://contacts-app.tobbymarshall815.vercel.app");
+
+
+        // open form --> click login button
+        WebElement loginTab = wd.findElement(By.cssSelector("[href='/login']"));
+        loginTab.click();
+        // fill valid email
+        WebElement emailTextBox = wd.findElement(By.cssSelector("[placeholder='Email']"));
+        emailTextBox.click();
+        emailTextBox.clear();
+        emailTextBox.sendKeys("noa009@gmail.com");
+        // fill valid password
+        WebElement passwordTextBox = wd.findElement(By.cssSelector("[placeholder='Password']"));
+        passwordTextBox.click();
+        passwordTextBox.clear();
+        passwordTextBox.sendKeys("Nnoa12345$");
+
+        // WebElement registrationButton = wd.findElement(By.cssSelector("div.login_login__3EHKB :last-child"));
+        // WebElement registrationButton = wd.findElement(By.cssSelector("button:last-child"));
+        List<WebElement> list = wd.findElements(By.cssSelector("button"));
+        WebElement registrationButton = list.get(1);
+        registrationButton.click();
 
 
     }
 
-    public static void main(String[] args) {
-        List<String> names = List.of("John","Jack","Tony");
-
-        if(!names.contains("John")){
-
-        }
-    }
 
 }
