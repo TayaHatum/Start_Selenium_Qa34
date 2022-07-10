@@ -3,8 +3,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.List;
 
 public class Start {
@@ -16,7 +18,10 @@ public class Start {
         wd = new ChromeDriver();
         // wd.get("https://contacts-app.tobbymarshall815.vercel.app/home"); // without history
 
-        wd.navigate().to("https://contacts-app.tobbymarshall815.vercel.app/home"); // with history
+        wd.navigate().to("https://contacts-app.tobbymarshall815.vercel.app/home");
+        wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        //new WebDriverWait(wd,Duration.ofSeconds(10)).
+                // with history
         wd.navigate().back();
         wd.navigate().forward();
         wd.navigate().refresh();
